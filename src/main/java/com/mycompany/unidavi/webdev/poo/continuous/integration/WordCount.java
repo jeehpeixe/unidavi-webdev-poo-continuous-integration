@@ -35,12 +35,20 @@ public class WordCount {
             Integer iTotal = 1;
             for (Map.Entry<String, Integer> pair : lista.entrySet()) {
                 if (sPalavra.equals(pair.getKey())){
-                    iTotal = iTotal + 1;
+                    iTotal = pair.getValue() + 1;
                 }
-
             }
 
-            lista.put(sPalavra, iTotal);
+            if (iTotal == 1) {
+                lista.put(sPalavra, iTotal);
+            }
+            else {
+                for (Map.Entry<String, Integer> pair : lista.entrySet()) {
+                    if (sPalavra.equals(pair.getKey())){
+                        pair.setValue(iTotal);
+                    }
+                }
+            }
         }
     }
     

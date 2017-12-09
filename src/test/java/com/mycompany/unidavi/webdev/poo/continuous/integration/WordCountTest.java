@@ -41,7 +41,6 @@ public class WordCountTest {
         assertEquals(expectedWordCount, actualWordCount);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void countMultipleOccurrences() {
         expectedWordCount.put("one", 1);
