@@ -52,9 +52,9 @@ public class WordCount {
         
         Map<String, Integer> aDadosInvertidos = new TreeMap<>();
         
-        lista.keySet().forEach((key) -> {
-            aDadosInvertidos.put(key, lista.get(key));
-        });
+        for (Map.Entry<String, Integer> oLista : lista.entrySet()) {
+            aDadosInvertidos.put(oLista.getKey(), oLista.getValue());
+        }
         
         return aDadosInvertidos;
     }

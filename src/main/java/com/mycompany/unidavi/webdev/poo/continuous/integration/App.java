@@ -5,12 +5,14 @@
  */
 package com.mycompany.unidavi.webdev.poo.continuous.integration;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author jessicapeixe
  */
 public class App {
     public static void main(String[] args){
-        System.out.println("ola");
+        Logger.getGlobal().info("ola");
     }
 }
