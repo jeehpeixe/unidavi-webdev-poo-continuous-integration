@@ -14,10 +14,48 @@ import java.util.TreeMap;
  */
 public class WordCount {
     
-    static private Map<String, Integer> lista = new TreeMap<>();
+    private final Map<String, Integer> lista = new TreeMap<>();
     
-    public Map<String, Integer> phrase(String sValor) {
-        return lista;
+    public Map<String, Integer> phrase(String sFrase) {
+        
+        setaDadosLista(sFrase);
+        
+        return inverteListaPalavras();
     }
     
+    /**
+     * Seta a frase informada no contador
+     * @param sFrase 
+     */
+    private void setaDadosLista(String sFrase) {
+        String[] aPalavras = sFrase.split(" ");
+        
+        for (String sPalavra : aPalavras) {
+            
+            Integer iTotal = 1;
+            for (Map.Entry<String, Integer> pair : lista.entrySet()) {
+                if (sPalavra.equals(pair.getKey())){
+                    iTotal = iTotal + 1;
+                }
+
+            }
+
+            lista.put(sPalavra, iTotal);
+        }
+    }
+    
+    /**
+     * Inverte os dados do contador
+     * @return Map
+     */
+    private Map<String, Integer> inverteListaPalavras() {
+        
+        Map<String, Integer> aDadosInvertidos = new TreeMap<>();
+        
+        lista.keySet().forEach((key) -> {
+            aDadosInvertidos.put(key, lista.get(key));
+        });
+        
+        return aDadosInvertidos;
+    }
 }

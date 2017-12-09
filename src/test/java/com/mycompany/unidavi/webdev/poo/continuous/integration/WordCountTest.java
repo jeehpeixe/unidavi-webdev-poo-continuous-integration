@@ -16,26 +16,21 @@ public class WordCountTest {
     private WordCount wordCount;
     private Map<String, Integer> actualWordCount;
     private Map<String, Integer> expectedWordCount;
-
-    @Ignore("Remove to run test")
+    
     @Before
     public void setup() {
         wordCount = new WordCount();
         expectedWordCount = new HashMap<>();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void countOneWord() {
         expectedWordCount.put("word", 1);
 
         actualWordCount = wordCount.phrase("word");
-        assertEquals(
-            expectedWordCount, actualWordCount
-        );
+        assertEquals(expectedWordCount, actualWordCount);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void countOneOfEach() {
         expectedWordCount.put("one", 1);
@@ -43,9 +38,7 @@ public class WordCountTest {
         expectedWordCount.put("each", 1);
 
         actualWordCount = wordCount.phrase("one of each");
-        assertEquals(
-            expectedWordCount, actualWordCount
-        );
+        assertEquals(expectedWordCount, actualWordCount);
     }
 
     @Ignore("Remove to run test")
